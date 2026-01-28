@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  # Neon Local Proxy Service
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: acquisitions-neon-local
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env.development
+    volumes:
+      # Optional: Persist branch metadata per git branch
+      - ./.neon_local/:/tmp/.neon_local
+      - ./.git/HEAD:/tmp/.git/HEAD:ro,consistent
+    networks:
+      - acquisitions-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h localhost -p 5432 -U neon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Main Application Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acquisitions-app-dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    volumes:
+      # Mount source code for development (hot reload)
+      - ./src:/app/src:ro
+      - ./logs:/app/logs
+      # Mount package.json for dependency changes
+      - ./package.json:/app/package.json:ro
+    depends_on:
+      neon-local:
+        condition: service_healthy
+    networks:
+      - acquisitions-network
+    restart: unless-stopped
+    command: ["npm", "run", "dev"]
+
+  # Optional: Drizzle Studio for database management
+  drizzle-studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acquisitions-drizzle-studio
+    ports:
+      - "4983:4983"
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://neon:npg@neon-local:5432/neondb?sslmode=require
+    volumes:
+      - ./src:/app/src:ro
+      - ./drizzle:/app/drizzle:ro
+      - ./drizzle.config.js:/app/drizzle.config.js:ro
+    depends_on:
+      neon-local:
+        condition: service_healthy
+    networks:
+      - acquisitions-network
+    restart: "no"
+    command: ["npm", "run", "db:studio"]
+    profiles:
+      - studio
+
+networks:
+  acquisitions-network:
+    driver: bridge
+
+volumes:
+  neon_local_data:

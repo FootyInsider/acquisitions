@@ -17,7 +17,6 @@ app.use(cookieParser());
 
 app.use(morgan('combined', { stream : { write: (message) => logger.info(message.trim()) }}));
 
-// Apply security middleware (rate limiting, bot detection, shield)
 app.use(securityMiddleware);
 
 app.get('/', (req, res) => {

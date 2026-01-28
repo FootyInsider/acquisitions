@@ -302,3 +302,14 @@
 {"level":"info","message":"::1 - - [28/Jan/2026:01:15:41 +0000] \"GET /health HTTP/1.1\" 429 99 \"-\" \"HTTPie\"","service":"acquisitions-api"}
 {"ip":"::1","level":"warn","message":"Rate Limit exceeded","path":"/health","service":"acquisitions-api","userAgent":"HTTPie"}
 {"level":"info","message":"::1 - - [28/Jan/2026:01:15:41 +0000] \"GET /health HTTP/1.1\" 429 99 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [28/Jan/2026:02:01:12 +0000] \"GET / HTTP/1.1\" 200 23 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:02:01:34 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:02:04:23 +0000] \"GET /api/auth/sign-up HTTP/1.1\" 404 155 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User footy@gmail.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: footy@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:02:05:25 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 100 \"-\" \"HTTPie\"","service":"acquisitions-api"}
