@@ -313,3 +313,49 @@
 {"level":"info","message":"User footy@gmail.com created successfully","service":"acquisitions-api"}
 {"level":"info","message":"User registered successfully: footy@gmail.com","service":"acquisitions-api"}
 {"level":"info","message":"::1 - - [28/Jan/2026:02:05:25 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 100 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Local development","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:16:32 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:17:04 +0000] \"GET /health HTTP/1.1\" 200 76 \"-\" \"-\"","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:20:11 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36 Edg/144.0.0.0\"","service":"acquisitions-api"}
+{"level":"info","message":"Database configured for Neon Cloud","service":"acquisitions-api"}
+{"level":"info","message":"Database connection established successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:20:47 +0000] \"POST / HTTP/1.1\" 404 140 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User footy@gmail.com authenticated successfully","service":"acquisitions-api"}
+{"level":"info","message":"User signed in successfully: footy@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:21:34 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 112 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting user by ID: 2","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:23:11 +0000] \"GET /api/users/2 HTTP/1.1\" 200 190 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:23:27 +0000] \"DELETE /api/users/2 HTTP/1.1\" 403 77 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Getting users...","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:25:02 +0000] \"GET /api/users/ HTTP/1.1\" 200 493 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"User admin@admin.pro created successfully","service":"acquisitions-api"}
+{"level":"info","message":"User registered successfully: admin@admin.pro","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:27:05 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 107 \"-\" \"HTTPie\"","service":"acquisitions-api"}
+{"level":"info","message":"Deleting user 1","service":"acquisitions-api"}
+{"level":"info","message":"User 1 deleted successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [28/Jan/2026:03:28:29 +0000] \"DELETE /api/users/1 HTTP/1.1\" 200 111 \"-\" \"HTTPie\"","service":"acquisitions-api"}

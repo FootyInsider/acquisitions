@@ -6,6 +6,9 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ### Running the Application
 - `npm run dev` - Start development server with file watching on port 3000
+- `npm run start` - Start production server
+- `npm run dev:docker` - Start development environment with Docker and Neon Local
+- `npm run prod:docker` - Start production environment with Docker
 - The app uses ES modules (`"type": "module"` in package.json)
 
 ### Code Quality
@@ -64,6 +67,12 @@ The project uses Node.js import maps for clean imports:
 - File logging to `logs/` directory (error.log, combined.log)
 - Console logging in development with colorization
 
+**Security Middleware** (`src/middleware/security.middleware.js`):
+- Arcjet integration for bot detection, shield protection, and rate limiting
+- Role-based rate limits: guests (5/min), users (10/min), admins (20/min)
+- Automatically blocks bot requests and applies security shields
+- Requires `ARCJET_KEY` environment variable for production
+
 ### Environment Variables
 Copy `.env.example` to `.env` and configure:
 - `PORT` - Server port (default: 3000)
@@ -71,9 +80,17 @@ Copy `.env.example` to `.env` and configure:
 - `LOG_LEVEL` - Winston log level
 - `DATABASE_URL` - Neon PostgreSQL connection string
 - `JWT_SECRET` - JWT signing secret (change from default!)
+- `ARCJET_KEY` - Required for production security middleware (Arcjet API key)
+
+### Docker Development Workflow
+- Development uses Neon Local for isolated database branches
+- `scripts/dev.sh` handles Docker development setup with automatic migration
+- Production connects directly to Neon Cloud database
+- See `DOCKER-DEPLOYMENT.md` and `README-DOCKER.md` for detailed Docker setup
 
 ### Development Notes
 - The app uses strict ESLint rules (2-space indentation, single quotes, semicolons required)
 - Cookie settings automatically adjust for production (secure flag)
 - Database schema changes require running `npm run db:generate` then `npm run db:migrate`
 - Health check available at `/health` endpoint
+- Security middleware requires user context for proper rate limiting by role
